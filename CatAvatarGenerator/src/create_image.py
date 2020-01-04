@@ -5,9 +5,9 @@ from base64 import b64encode
 
 from PIL import Image
 
-from app.utils import get_names_from_directory
-from app.settings.paths import IMAGES_DIR, TMP_IMAGE_PATH
-from app.settings.config import (
+from CatAvatarGenerator.utils import get_names_from_directory
+from CatAvatarGenerator.settings.paths import IMAGES_DIR
+from CatAvatarGenerator.settings.config import (
     WHITE_PIXEL, BLACK_PIXEL, BASE_IMAGE_SIZE, IMAGE_MODE, CONVERTED_SIZE
 )
 
@@ -42,11 +42,10 @@ def create_cat_avatar(user_id):
 
     merged_image = Image.new(IMAGE_MODE, BASE_IMAGE_SIZE)
     merged_image.putdata(merged_pixels)
-
-    resized_image = merged_image.resize(CONVERTED_SIZE)
+    resized_image = merged_image.resize(CONVERTED_SIZE, Image.NEAREST)
 
     with BytesIO() as stream:
-        resized_image.save(stream, 'PNG')
+        resized_image.save(stream, 'PNG', quality=100)
         stream.seek(0)
         image_stream = b64encode(stream.getvalue())
     return image_stream.decode('ascii')
