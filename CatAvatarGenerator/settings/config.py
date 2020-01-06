@@ -6,3 +6,5 @@ IMAGE_MODE = 'RGBA'
 BASE_IMAGE_SIZE = (64, 64)
 
 CONVERTED_SIZE = (640, 640)
+
+SALT = 'different salt for different website'

@@ -48,4 +48,4 @@ def create_cat_avatar(user_id):
         resized_image.save(stream, 'PNG', quality=100)
         stream.seek(0)
         image_stream = b64encode(stream.getvalue())
-    return image_stream.decode('ascii')
+    return image_stream
