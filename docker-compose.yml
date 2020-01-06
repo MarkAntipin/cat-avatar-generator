@@ -2,7 +2,13 @@ avatar_generator:
   build: .
   ports:
    - "5000:5000"
-#  environment:
-#    ENV: DEV
+  environment:
+    ENV: DEV
   volumes:
     - ./CatAvatarGenerator:/CatAvatarGenerator/CatAvatarGenerator
+  links:
+    - redis
+
+
+redis:
+  image: redis:5.0.6
