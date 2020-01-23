@@ -8,7 +8,7 @@ from CatAvatarGenerator.settings.config import SALT
 
 app = Flask(__name__)
 
-cache = redis.StrictRedis()
+cache = redis.StrictRedis(host='redis', port=6379)
 
 
 @app.route('/<string:user_id>')
