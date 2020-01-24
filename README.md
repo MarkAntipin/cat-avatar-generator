@@ -28,3 +28,5 @@ and make request on
 ```
 http://0.0.0.0:5000/<user_id>
 ```
+For one <user_id> you will always get the same identification icon.
+Every icon caches in redis
