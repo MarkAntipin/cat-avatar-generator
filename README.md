@@ -8,7 +8,7 @@ CatAvatarGenerator can generate 10 million unique cats such as these
 ![Alt text](https://raw.githubusercontent.com/MarkAntipin/CatAvatarGenerator/master/cat_examples/cat1.jpg)| ![Alt text](https://raw.githubusercontent.com/MarkAntipin/CatAvatarGenerator/master/cat_examples/cat2.jpg)| ![Alt text](https://raw.githubusercontent.com/MarkAntipin/CatAvatarGenerator/master/cat_examples/cat3.jpg)
 :-------------------------:|:-------------------------:|:-------------------------|
 
-For one user_id you will always get the same identification icon.
+For one <user_id> you will always get the same identification icon.
 Every icon caches in redis
 
 ## Run Application
@@ -22,4 +22,9 @@ or without docker
 ```shell script
 pip install -r requirements.txt
 python3 CatAvatarGenerator/server.py
+```
+
+and make request on
+```
+http://0.0.0.0:5000/<user_id>
 ```
