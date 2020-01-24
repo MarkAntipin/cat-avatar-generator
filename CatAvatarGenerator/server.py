@@ -11,6 +11,11 @@ app = Flask(__name__)
 cache = redis.StrictRedis(host='redis', port=6379)
 
 
+@app.route('/')
+def index():
+    return "Hello it's CatAvatarGenerator"
+
+
 @app.route('/<string:user_id>')
 def get_cat_avatar(user_id):
     salted_user_id = SALT + user_id
