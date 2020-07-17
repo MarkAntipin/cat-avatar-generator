@@ -1,4 +1,4 @@
-# CatAvatarGenerator
+# cat-avatar-generator
 
 ## Introdution
 
